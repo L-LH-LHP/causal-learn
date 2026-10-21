@@ -1,0 +1,9 @@
+torch==2.14.1+cpu
+dowhy==0.14
+causal-learn==0.1.4.8
+econml==0.17.0
+gcastle==1.0.4
+jupyter==1.1.1
+networkx==3.4.2
+matplotlib==3.10.9
+pandas==2.3.3
