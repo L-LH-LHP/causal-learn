@@ -1,0 +1,55 @@
+digraph chain{
+    rankdir=LR;
+    node [shape=plaintext,fontname="Helvetica"];
+    X [label="X(处理)"];
+    M [label="M(中介)"];
+    Y [label="Y(结果)"];
+    X->M->Y;
+}
+
+
+digraph fork{
+    rankdir=TB;
+    node [shape=plaintext,fontname="Helvetica"];
+    X [label="X(处理)"];
+    Z [label="Z(共同原因)"];
+    Y [label="Y(结果)"];
+    {rank=same;X;Y}
+    Z->X;
+    Z->Y;
+}
+
+digraph collider{
+    rankdir=TB;
+    node [shape=plaintext,fontname="Helvetica"];
+    X [label="X(原因1)"];
+    Z [label="Z(共同结果)"];
+    Y [label="Y(原因2)"];
+    {rank=same;X;Y}
+    X->Z;
+    Y->Z;
+}
+
+digraph confounding{
+    rankdir=TB;
+    node [shape=plaintext,fontname="Helvetica"];
+    X [label="X(处理)"];
+    U [label="U(未观测混杂)",style=dashed];
+    Y [label="Y(结果)"];
+    {rank=same;X;Y}
+    U->X;
+    U->Y;
+}
+
+digraph frontdoor{
+    rankdir=LR;
+    node [shape=plaintext,fontname="Helvetica"];
+    X [label="X(处理)"];
+    U [label="U(未观测)",style=dashed];
+    Y [label="Y(结果)"];
+    M [lable="M(中介)"];
+    X->M->Y;
+    U->X;
+    U->Y;
+}
+
